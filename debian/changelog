@@ -1,0 +1,203 @@
+django-nose (1.4.6-2.1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Thomas Goirand ]
+  * Team upload.
+  * Removed Python 2 support.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 25 Jul 2019 04:46:27 +0200
+
+django-nose (1.4.6-1) unstable; urgency=low
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+  [ Michael Fladischer ]
+  * New upstream release.
+  * Refresh patches.
+  * Enable autopkgtest-pkg-python testsuite.
+  * Bump debhelper compatibility and version to 11.
+  * Bump Standards-Version to 4.2.1.
+  * Run wrap-and-sort -bast to reduce diff size of future changes.
+  * Install README.rst in both binary packages.
+
+ -- Michael Fladischer <fladi@debian.org>  Fri, 26 Oct 2018 16:16:38 +0200
+
+django-nose (1.4.5-1) unstable; urgency=low
+
+  [ Thomas Goirand ]
+  * Refresh patches after git-dpm to gbp pq conversion
+
+  [ Michael Fladischer ]
+  * New upstream release.
+  * Refresh patches for 1.4.5.
+  * Bump Standards-Version to 4.1.1.
+  * Add python(3)-django to Depends.
+  * Use https:// for copyright-format 1.0 URL.
+  * Add patch to prevent installation of testapp package.
+
+ -- Michael Fladischer <fladi@debian.org>  Tue, 17 Oct 2017 20:33:20 +0200
+
+django-nose (1.4.4-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed homepage (https)
+
+  [ Thomas Goirand ]
+  * Team upload.
+  * New upstream release:
+    - Has compat for Django 1.10 (Closes: #828652).
+    - Rebased patches.
+  * Standards-Version: 3.9.8 (no change).
+  * Added a debian/gbp.conf.
+  * Ran wrap-and-sort -t -a.
+  * Added extend-diff-ignore = "^[^/]*[.]egg-info/" in d/s/options.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 19 Jul 2016 11:59:11 +0000
+
+django-nose (1.4.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh patches.
+  * Add patch to disable tests that use REUSE_DB as they are broken.
+
+ -- Michael Fladischer <fladi@debian.org>  Thu, 07 Jan 2016 13:03:39 +0100
+
+django-nose (1.4.2-2) unstable; urgency=medium
+
+  * Fix python3 depends. Closes: #803005.
+
+ -- Brian May <bam@debian.org>  Mon, 26 Oct 2015 09:48:11 +1100
+
+django-nose (1.4.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh runtests.patch.
+  * Add 0003-Remove-unnecessary-dependency-on-dj_database_url.patch to remove
+    test dependency on dj_database_url module.
+  * Bump debhelper compatibility and version to 9.
+  * Initialize git-dpm.
+  * Update Vcs fields for git migration.
+
+ -- Michael Fladischer <fladi@debian.org>  Fri, 16 Oct 2015 16:45:04 +0200
+
+django-nose (1.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Michael Fladischer <fladi@debian.org>  Mon, 06 Jul 2015 11:00:42 +0200
+
+django-nose (1.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Use github repository for uscan.
+  * Bump Standards-Version to 3.9.6.
+  * Add gawk to Build-Depends because it is required by runtests.sh.
+  * Refresh runtests.patch.
+  * Use correct Python version to determine tests to run in
+    runtests.patch.
+  * Remove PHONY target declarations from d/rules.
+  * Use only one for loop to run the tests for all requested Python versions.
+  * Use distinctive description for python3 package.
+  * Line-wrap Depends fields for easier reading.
+  * Add X-Python3-Version for versions => 3.3.
+  * Add DEP3 header to django17.patch.
+  * Change my email address to fladi@debian.org.
+
+ -- Michael Fladischer <fladi@debian.org>  Tue, 19 May 2015 08:41:05 +0200
+
+django-nose (1.2-3) unstable; urgency=low
+
+  * Fix Django 1.7 AppRegistryNotReady error, by calling django.setup() in
+    tests. Closes: #763252.
+
+ -- Brian May <bam@debian.org>  Mon, 29 Sep 2014 11:40:22 +1000
+
+django-nose (1.2-2) unstable; urgency=low
+
+  * Python 3 package.
+  * Disable django-south in tests. Closes: #755665.
+
+ -- Brian May <bam@debian.org>  Wed, 13 Aug 2014 13:15:21 +1000
+
+django-nose (1.2-1) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Michael Fladischer ]
+  * New upstream release (Closes: #711360).
+  * Switch to dh_python2.
+  * Build-Depends on dh-python.
+  * Bump Standards version to 3.9.5.
+  * Bump Build-Depends on debhelper to >= 8.1.0 to satisfy build-arch
+    and build-indep targets.
+  * Drop versioned Build-Depends on python-all as no prior versions are
+    available in Wheezy.
+  * Drop versioned Depends and Build-Depends on python-django as no prior
+    versions are available in Wheezy.
+  * Use correct DEP5 format URL for d/copyright.
+  * Rename BSD-django-nose to BSD-3-clause license.
+  * Refresh patch.
+  * Update years in d/copyright.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Mon, 16 Dec 2013 13:56:11 +0100
+
+django-nose (1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Make temporary Metadata-Version fix more generic for future
+    versions.
+  * Bump Standards version to 3.9.3.
+  * Use BSD-django-nose as license name in d/copyright.
+  * Change order of my name.
+  * Add email addresses to authors in d/copyright.
+  * Use PyPi URL in d/watch.
+
+ -- Michael Fladischer <FladischerMichael@fladi.at>  Mon, 04 Jun 2012 19:28:30 +0200
+
+django-nose (0.1.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump standards version to 3.9.2 (no change).
+  * Use wrap-and-sort on debian/*.
+  * Bump python-django dependency to (>= 1.2).
+  * Temporary fix for Metadata-Version in PKG-INFO (see #645125).
+  * Use http://githubredir.debian.net in d/watch to get clean tarball.
+  * Use runtests.sh provided by upstream to run all tests.
+  * Add python-django-south to Build-Depends to be able to run all
+    tests.
+  * Add patch for runtests.sh to enable the use of non-default python
+    versions for running the tests.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Sat, 26 Nov 2011 13:55:48 +0100
+
+django-nose (0.1.2-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Update DEP5 format.
+  * Set PMPT as maintainer and myself as uploader.
+  * Provide a more verbose long description.
+  * Drop debian/pyversions in favour of XS-Python-Version.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Mon, 07 Feb 2011 14:17:27 +0100
+
+django-nose (0.1.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update to Debian policy 3.9.1.
+  * Drop do_not_install_testapp patch as it has been integrated by
+    upstream.
+  * Update copyright year.
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Fri, 03 Dec 2010 00:41:23 +0100
+
+django-nose (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #584106)
+
+ -- Fladischer Michael <FladischerMichael@fladi.at>  Wed, 16 Jun 2010 13:15:15 +0200

@@ -1,0 +1,5 @@
+version=3
+opts=filenamemangle=s/.+\/v([\d\.]+)\.tar\.gz/django-nose-$1.tar.gz/ \
+https://github.com/django-nose/django-nose/releases \
+/django-nose/django-nose/archive/v([\d\.]+)\.tar\.gz
+
